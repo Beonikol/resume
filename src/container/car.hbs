@@ -1,0 +1,210 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <header>
+    <section>
+      <div>
+        <h1>{{make}} {{model}}</h1>
+      </div>
+      <br>
+      <div>
+        <span class="badge text-bg-primary">{{year}}</span>
+        <span class="badge text-bg-secondary">{{color}}</span>
+      </div>
+    </section>
+  </header>
+  <br>
+  <hr>
+  <main>
+    <div>
+      {{#with features}}
+        <section>
+          <div>
+            <button type="button" class="btn btn-dark">Interior</button>
+          </div>
+          <br>
+          <div>
+            <ul>
+              <li>Material: {{interior.seats.material}}</li>
+              <li>Color: {{interior.seats.color}}</li>
+              <li>Heated: {{interior.seats.heated}}</li>
+              <li>Ventilated: {{interior.seats.ventilated}}</li>
+            </ul>
+          </div>
+        </section>
+        <br>
+        <hr>
+        <section>
+          <div>
+            <button type="button" class="btn btn-dark">Dashboard</button>
+          </div>
+          <br>
+          <div>
+            <ul>
+              <li>Material: {{interior.dashboard.material}}</li>
+              <li>Color: {{interior.dashboard.color}}</li>
+              <li>Display: {{interior.dashboard.display.type}} / {{interior.dashboard.display.size}} / {{interior.dashboard.display.resolution}} / {{interior.dashboard.display.touchscreen}}</li>
+            </ul>
+          </div>
+        </section>
+        <br>
+        <hr>
+        <section>
+          <div>
+              <button type="button" class="btn btn-dark">Audio</button>
+          </div>
+          <br>
+          <div>
+            <ul>
+              <li>System: {{interior.audio.system}}</li>
+              <li>Speakers: {{interior.audio.speakers}}</li>
+              <li>Subwoofer: {{interior.audio.subwoofer}}</li>
+              <li>Bluetooth: {{interior.audio.bluetooth}}</li>
+              <li>USB: {{interior.audio.USB}}</li>
+            </ul>
+          </div>
+        </section>
+        <br>
+        <hr>
+        <div>
+              <h4>Exterior <span class="badge bg-secondary">New</span></h4>
+        </div>
+        <br>
+         <section>
+            <div>
+              <button type="button" class="btn btn-dark">Wheels</button>
+            </div>
+              <br>
+            <div>
+              <ul>
+                <li>Size: {{exterior.wheels.size}}</li>
+                <li>Type: {{exterior.wheels.type}}</li>
+                <li>Color: {{exterior.wheels.color}}</li>
+              </ul>
+            </div>
+        </section>
+        <br>
+        <hr>
+        <section>
+            <div>
+              <button type="button" class="btn btn-dark">Headlights</button>
+            </div>
+              <br>
+            <div>
+              <ul>
+                <li>Type: {{exterior.headlights.type}}</li>
+                <li>Brightness: {{exterior.headlights.brightness}}</li>
+                <li>Automatic: {{exterior.headlights.automatic}}</li>
+              </ul>
+            </div>
+        </section>
+        <br>
+        <hr>
+        <section>
+            <div>
+              <button type="button" class="btn btn-dark">Sunroof</button>
+            </div>
+              <br>
+            <div>
+              <ul>
+                <li>Type: {{exterior.sunroof.type}}</li>
+                <li>Size: {{exterior.sunroof.size}}</li>
+                <li>Automatic: {{exterior.sunroof.automatic}}</li>
+              </ul>
+            </div>
+        </section>
+        <br>
+        <hr>
+        <section>
+          <div>
+              <h4>Safety <span class="badge bg-secondary">New</span></h4>
+          </div>
+          <br>
+            <div>
+              <button type="button" class="btn btn-dark">Airbags</button>
+            </div>
+              <br>
+            <div>
+              <ul>
+                <li>Front: {{safety.airbags.front}}</li>
+                <li>Side: {{safety.airbags.side}}</li>
+                <li>Knee: {{safety.airbags.knee}}</li>
+                <li>Rear: {{safety.airbags.rear}}</li>
+              </ul>
+            </div>
+            <br>
+            <hr>
+            <div>
+              <button type="button" class="btn btn-dark">Assistance</button>
+            </div>
+              <br>
+            <div>
+              <ul>
+                <li>Blind spot monitoring: {{safety.assistance.blind_spot_monitoring}}</li>
+                <li>Rear cross traffic alert: {{safety.assistance.rear_cross_traffic_alert}}</li>
+                <li>Lane departure warning: {{safety.assistance.lane_departure_warning}}</li>
+                <li>Adaptive cruise control: {{safety.assistance.adaptive_cruise_control}}</li>
+                <li>Collision warning: {{safety.assistance.collision_warning}}</li>
+              </ul>
+            </div>
+        </section>        
+      {{/with}}
+      <br>
+      <hr>
+      <section>
+            <div>
+              <span class="badge text-bg-primary">Engine</span>
+            </div>
+              <br>
+            <div>
+              <ul>
+                <li>Type: {{engine.type}}</li>
+                <li>Displacement: {{engine.displacement}}</li>
+                <li>Horsepower: {{engine.horsepower}}</li>
+                <li>Torque: {{engine.torque}}</li>
+                <li>Transmission: {{engine.transmission.type}} / {{engine.transmission.gears}}</li>
+              </ul>
+            </div>
+            <br>
+            <hr>
+            <div>
+              <span class="badge text-bg-primary">Fuel economy</span>
+            </div>
+              <br>
+            <div>
+              <ul>
+                <li>City: {{fuel_economy.city}}</li>
+                <li>Highway: {{fuel_economy.highway}}</li>
+                <li>Combined: {{fuel_economy.combined}}</li>
+              </ul>
+            </div>
+            <br>
+            <hr>
+            <div>
+              <span class="badge text-bg-primary">Price</span>
+            </div>
+              <br>
+            <div>
+              <ul>
+                <li>Base: {{price.base}}</li>
+                <li>Destination: {{price.destination}}</li>
+                <li>Navigation: {{price.options.navigation}}</li>
+                <li>Moonroof: {{price.options.moonroof}}</li>
+                <li>Premium paint: {{price.options.premium_paint}}</li>
+              </ul>
+            </div>
+            <div>
+              Total: <button type="button" class="btn btn-success">{{price.total}}</button>
+            </div>
+        </section>
+    </div>
+  </main>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
