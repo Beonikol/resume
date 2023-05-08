@@ -1,0 +1,131 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <header>
+    <section>
+      <div>
+        <h1>{{name}}</h1>
+      </div>
+    </section>
+  </header>
+  <br>
+  <hr>
+  <main>
+    <div>
+      <span class="text-bg-primary">Users</span>
+    </div>
+    <br>
+    {{#with users.[0]}}
+      <div>
+        <ul>
+          {{id}} / {{name}} / {{gender}} / {{age}}
+        </ul>
+      </div>
+      <br>
+      <div>
+        <span class="badge text-bg-success">Friends</span>
+      </div>
+      <br>
+      <div>
+        {{#each friends}}
+          <li>
+              {{id}} / {{name}} / {{gender}} / {{age}} 
+              <ul>
+                {{#each mutual_friends}}
+                  <li>{{id}} / {{name}} / {{gender}} / {{age}}</li>
+                {{/each}}
+              </ul>
+          </li>
+        {{/each}}
+      </div>
+
+
+      <br>
+     <div>
+      <span class="badge text-bg-dark">Groups</span>
+    </div>
+    <br>
+    {{#each groups}}
+      <div>
+        <ul>
+          <li>
+            {{id}} / {{name}} / {{description}}
+            <ul>
+                {{#each members}}
+                  <li>{{id}} / {{name}} / {{gender}} / {{age}}</li>
+                {{/each}}
+              </ul>
+          </li>
+        </ul>
+      </div>
+      {{/each}}
+     {{/with}}
+
+      <br>
+      <hr>
+      <div>
+        <span class="text-bg-primary">Users</span>
+      </div>
+    <br>
+     {{#with users.[1]}}
+      <div>
+        <ul>
+          {{id}} / {{name}} / {{gender}} / {{age}}
+        </ul>
+      </div>
+      <br>
+      <div>
+        <span class="badge text-bg-success">Friends</span>
+      </div>
+      <br>
+      <div>
+        {{#each friends}}
+          <li>
+              {{id}} / {{name}} / {{gender}} / {{age}} 
+              <ul>
+                {{#each mutual_friends}}
+                  <li>
+                    {{id}} / {{name}} / {{gender}} / {{age}}
+                    <ul>
+                      {{#each mutual_friends}}
+                        <li>{{id}} / {{name}} / {{gender}} / {{age}}</li>
+                      {{/each}}
+                    </ul>
+                  </li>
+                {{/each}}
+              </ul>
+          </li>
+          <br>
+          <div>
+            <span class="badge text-bg-dark">Groups</span>
+          </div>
+          <br>
+          <div>
+            {{#each groups}}
+              <div>
+                <ul>
+                  <li>
+                    {{id}} / {{name}} / {{description}}
+                    <ul>
+                      {{#each members}}
+                        <li>{{id}} / {{name}} / {{gender}} / {{age}}</li>
+                      {{/each}}
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            {{/each}}
+          </div>
+        {{/each}}
+      </div>
+    {{/with}}
+  </main>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
