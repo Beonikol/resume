@@ -1,0 +1,40 @@
+<div class="row">
+    {{#each itemList}}
+    <div class="col-12">
+        <div class="card mb-2">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3 mt-3">
+                        <div>
+                            <p>{{number}}</p>
+                        </div>
+                        <div>
+                            <h5>{{status}}</h5>
+                        </div>
+                    </div>
+                    <div class="col-2 mt-4">
+                        <div>
+                            {{#with amount}}
+                            <div>
+                                <em>{{title}}:</em>
+                            </div>
+                            <div><strong>{{value}}</strong></div>
+                            {{/with}}
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        {{#each images}}
+                        <img src="{{this}}" alt="images">
+                        {{/each}}
+                    </div>
+                    <div class="col-2 mt-4">
+                        {{#with button}}
+                        <a href="{{link}}" class="{{#if isPrimary}}btn btn-primary{{/if}}">{{text}}</a>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
