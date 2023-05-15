@@ -1323,7 +1323,7 @@ router.get('/task31', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task31', {
-    layout: 'basic',
+    layout: 'bootstrap',
     
     navigation: {
       links: [
@@ -2269,6 +2269,24 @@ router.get('/shoporder', function (req, res) {
         },
       ],
     ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+router.get('/bootstrap-icon', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrap-icon', {
+    layout: 'bootstrap',
+    
+    
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
