@@ -18,54 +18,58 @@
         {{/with}}
     </section>
     <hr>
-        {{>cartGoodsItem}}
+    {{#each goodsBlock}}
+    {{>cartGoodsItem}}
+    {{/each}}
     <hr>
     <section class="mb-5">
         {{#with total}}
-            <div>
-                <h5>{{title}}</h5>
-            </div>
-            <div class="display-5 my-2">
-                <strong>{{amount}}</strong>
-            </div>
-            <div class="my-2">
-                <p>{{delivery}}</p>
-            </div>
-            <div class="col-3">
-                {{#each buttons}}
-                    <a href="{{link}}" class="{{#if isSuccess}}btn btn-success{{/if}} {{#if isOutline}}btn btn-outline-success{{/if}} my-2">{{text}}</a>
-                {{/each}}
-            </div>
+        <div>
+            <h5>{{title}}</h5>
+        </div>
+        <div class="display-5 my-2">
+            <strong>{{amount}}</strong>
+        </div>
+        <div class="my-2">
+            <p>{{delivery}}</p>
+        </div>
+        <div class="col-3">
+            {{#each buttons}}
+            <a href="{{link}}"
+                class="{{#if isSuccess}}btn btn-success{{/if}} {{#if isOutline}}btn btn-outline-success{{/if}} my-2">{{text}}</a>
+            {{/each}}
+        </div>
         {{/with}}
     </section>
     <hr>
     <section>
         {{#with goodsOtherBlock}}
-            <div class="row">
-                <div class="col-12">
-                    <div class="text-center mb-4">
-                        <h3>{{title}}</h3>
-                    </div>
-                    <div class="row">
-                        {{#each cards}}
-                        <div class="col-4">
-                            <div class="card">
-                                <img class="card-img-top" src="{{image}}" alt="{{title}}">
-                                <div class="card-body">
-                                    <h4 class="card-title">{{title}} {{#if isNew}}
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center mb-4">
+                    <h3>{{title}}</h3>
+                </div>
+                <div class="row">
+                    {{#each cards}}
+                    <div class="col-4">
+                        <div class="card">
+                            <img class="card-img-top" src="{{image}}" alt="{{title}}">
+                            <div class="card-body">
+                                <h4 class="card-title">{{title}} {{#if isNew}}
                                     <span class="badge text-bg-primary ms-1 rounded-pill mb-2">New</span>
                                     {{/if}}
                                     {{#if isHot}}
                                     <span class="badge text-bg-warning ms-1 rounded-pill mb-2">Hot</span>
-                                    {{/if}}</h4>
-                                    <p>{{description}}</p>
-                                </div>
+                                    {{/if}}
+                                </h4>
+                                <p>{{description}}</p>
                             </div>
                         </div>
-                        {{/each}}
                     </div>
+                    {{/each}}
                 </div>
             </div>
+        </div>
         {{/with}}
     </section>
     <hr>
@@ -83,7 +87,7 @@
                         <a href="{{link}}" class="btn btn-primary mb-2">{{text}}</a>
                     </div>
                     {{/each}}
-                </div>   
+                </div>
             </div>
         </div>
         {{/with}}
