@@ -5,170 +5,217 @@
 
 <div>
   <header>
-    <section>
-      <div>
+    <section class="text-center">
+      <div class="mb-3">
         <h1>{{name}}</h1>
       </div>
-      <br>
-      <div>
+
+      <div class="mb-3">
         <em>{{description}}</em>
       </div>
-      <br>
-      <div>
+
+      <div class="mb-3">
         <button type="button" class="btn btn-primary">{{price}}</button>
       </div>
     </section>
   </header>
-  <br>
-  <hr>
+
   <main>
-    <div>
-      <h2>Category: {{category}}</h2>
+    <div class="card">
+      <div class="card-body">
+        <div class="text-center mb-3">
+          <h2>Category: {{category}}</h2>
+        </div>
+        {{#with features}}
+        <section>
+          <div class="card mb-2">
+            <div class="card-body">
+              <div>
+                <span class="badge text-bg-dark">Processor</span>
+              </div>
+              <br>
+              <div>
+                <ul>
+                  {{processor.brand}} / {{processor.model}} / {{processor.speed}} / {{processor.cores}} /
+                  {{processor.cache}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="card mb-2">
+            <div class="card-body">
+              <div>
+                <span class="badge text-bg-dark">Memory</span>
+              </div>
+              <br>
+              <div>
+                <ul>
+                  {{memory.type}} / {{memory.size}} / {{memory.speed}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="card mb-2">
+            <div class="card-body">
+              <div>
+                <span class="badge text-bg-dark">Storage</span>
+              </div>
+              <br>
+              <div>
+                <ul>
+                  {{storage.type}} / {{storage.size}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="card mb-2">
+            <div class="card-body">
+              <div>
+                <span class="badge text-bg-dark">Display</span>
+              </div>
+              <br>
+              <div>
+                <ul>
+                  {{display.size}} / {{display.resolution}} / {{display.technology}} / {{display.color_space}} /
+                  {{display.brightness}} / {{display.refresh_rate}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="card mb-2">
+            <div class="card-body">
+              <div>
+                <span class="badge text-bg-dark">Graphics</span>
+              </div>
+              <br>
+              <div>
+                <ul>
+                  {{graphics.brand}} / {{graphics.model}} / {{graphics.memory}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="card mb-2">
+            <div class="card-body">
+              <div>
+                <span class="badge text-bg-dark">Ports</span>
+              </div>
+              <br>
+              <div>
+                {{#each ports}}
+                <ul>
+                  <li>{{type}} / {{count}}</li>
+                  {{#each features}}
+                  <ul>
+                    <li>{{this}}</li>
+                  </ul>
+                  {{/each}}
+                </ul>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="card mb-2">
+            <div class="card-body">
+              <div>
+                <span class="badge text-bg-dark">Battery</span>
+              </div>
+              <br>
+              <div>
+                <ul>
+                  {{battery.type}} / {{battery.capacity}} / {{battery.life}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="card mb-2">
+            <div class="card-body">
+              <div>
+                <span class="badge text-bg-dark">Weight</span>
+              </div>
+              <br>
+              <div>
+                <ul>
+                  {{weight}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="card mb-2">
+            <div class="card-body">
+              <div>
+                <span class="badge text-bg-dark">Dimensions</span>
+              </div>
+              <br>
+              <div>
+                <ul>
+                  {{dimensions.height}} / {{dimensions.width}} / {{dimensions.depth}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="card mb-2">
+            <div class="card-body">
+              <div>
+                <span class="badge text-bg-dark">Operating system</span>
+              </div>
+              <br>
+              <div>
+                <ul>
+                  {{operating_system}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="card mb-2">
+            <div class="card-body">
+              <div>
+                <span class="badge text-bg-dark">Accessories</span>
+              </div>
+              <br>
+              <div>
+                {{#each accessories}}
+                <ul>
+                  <li>{{name}} / {{price}}</li>
+                </ul>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </section>
+        {{/with}}
+      </div>
     </div>
-    <br>
-    {{#with features}}
-    <section>
-      <div>
-        <span class="badge text-bg-dark">Processor</span>
-      </div>
-      <br>
-      <div>
-        <ul>
-          {{processor.brand}} / {{processor.model}} / {{processor.speed}} / {{processor.cores}} / {{processor.cache}}
-        </ul>
-      </div>
-    </section>
-    <br>
-    <section>
-      <div>
-        <span class="badge text-bg-dark">Memory</span>
-      </div>
-      <br>
-      <div>
-        <ul>
-          {{memory.type}} / {{memory.size}} / {{memory.speed}}
-        </ul>
-      </div>
-    </section>
-    <br>
-    <section>
-      <div>
-        <span class="badge text-bg-dark">Storage</span>
-      </div>
-      <br>
-      <div>
-        <ul>
-          {{storage.type}} / {{storage.size}}
-        </ul>
-      </div>
-    </section>
-    <br>
-    <section>
-      <div>
-        <span class="badge text-bg-dark">Display</span>
-      </div>
-      <br>
-      <div>
-        <ul>
-          {{display.size}} / {{display.resolution}} / {{display.technology}} / {{display.color_space}} /
-          {{display.brightness}} / {{display.refresh_rate}}
-        </ul>
-      </div>
-    </section>
-    <br>
-    <section>
-      <div>
-        <span class="badge text-bg-dark">Graphics</span>
-      </div>
-      <br>
-      <div>
-        <ul>
-          {{graphics.brand}} / {{graphics.model}} / {{graphics.memory}}
-        </ul>
-      </div>
-    </section>
-    <br>
-    <section>
-      <div>
-        <span class="badge text-bg-dark">Ports</span>
-      </div>
-      <br>
-      <div>
-        {{#each ports}}
-        <ul>
-          <li>{{type}} / {{count}}</li>
-          {{#each features}}
-          <ul>
-            <li>{{this}}</li>
-          </ul>
-          {{/each}}
-        </ul>
-        {{/each}}
-      </div>
-    </section>
-    <br>
-    <section>
-      <div>
-        <span class="badge text-bg-dark">Battery</span>
-      </div>
-      <br>
-      <div>
-        <ul>
-          {{battery.type}} / {{battery.capacity}} / {{battery.life}}
-        </ul>
-      </div>
-    </section>
-    <br>
-    <section>
-      <div>
-        <span class="badge text-bg-dark">Weight</span>
-      </div>
-      <br>
-      <div>
-        <ul>
-          {{weight}}
-        </ul>
-      </div>
-    </section>
-    <br>
-    <section>
-      <div>
-        <span class="badge text-bg-dark">Dimensions</span>
-      </div>
-      <br>
-      <div>
-        <ul>
-          {{dimensions.height}} / {{dimensions.width}} / {{dimensions.depth}}
-        </ul>
-      </div>
-    </section>
-    <br>
-    <section>
-      <div>
-        <span class="badge text-bg-dark">Operating system</span>
-      </div>
-      <br>
-      <div>
-        <ul>
-          {{operating_system}}
-        </ul>
-      </div>
-    </section>
-    <br>
-    <section>
-      <div>
-        <span class="badge text-bg-dark">Accessories</span>
-      </div>
-      <br>
-      <div>
-        {{#each accessories}}
-        <ul>
-          <li>{{name}} / {{price}}</li>
-        </ul>
-        {{/each}}
-      </div>
-    </section>
-    {{/with}}
   </main>
 </div>
 

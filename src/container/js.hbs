@@ -3,148 +3,176 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
 
-<div>
+<div class="card">
   <header>
-    <section>
-      <div>
-        <h1>{{name}}</h1>
-      </div>
-      <br>
-      <div>
-        <em>{{description}}</em>
-      </div>
-      <br>
-      <div>
-        <span class="badge text-bg-primary">History:</span>
-      </div>
-      <br>
-      <div>
-        {{history.year}} {{history.founder}}
-      </div>
-    </section>
+    <div class="card-header">
+      <section class="text-center">
+        <div>
+          <h1>{{name}}</h1>
+        </div>
+        <br>
+        <div>
+          <em>{{description}}</em>
+        </div>
+        <br>
+        <div>
+          <span class="badge text-bg-primary">History:</span>
+        </div>
+        <br>
+        <div>
+          {{history.year}} {{history.founder}}
+        </div>
+      </section>
+    </div>
   </header>
-  <br>
-  <hr>
   <main>
-    <section>
-      <div>
-        <span class="badge text-bg-dark">Types:</span>
-      </div>
-      <br>
-      <div>
-        <ul>
-          {{#each types}}
-            <li>{{this}}</li>
-          {{/each}}
-        </ul>
-      </div>
-    </section>
-    <br>
-    <hr>
-    <section>
-      <div>
-        <span class="badge rounded-pill text-bg-success">Syntax:</span>
-      </div>
-      <br>
-      <div>
-        {{#with syntax}}
-        <b>Variables:</b>
+    <div class="card-body">
+      <section>
+        <div class="mb-3">
+          <span class="badge text-bg-dark">Types:</span>
+        </div>
+        <div>
           <ul>
-            {{#each variables}}
-              <li>{{this}}</li>
-            {{/each}}
+            <div class="row">
+              {{#each types}}
+              <div class="col-4">
+                <li>{{this}}</li>
+              </div>
+              {{/each}}
+            </div>
           </ul>
-          <br>
-          <b>Functions:</b>
+        </div>
+      </section>
+      <hr>
+      <section>
+        <div class="mb-3">
+          <span class="badge rounded-pill text-bg-success">Syntax:</span>
+        </div>
+
+        <div>
+          <div class="row">
+            {{#with syntax}}
+            <div class="col-2">
+              <div class="mb-2">
+                <b>Variables:</b>
+              </div>
+              <ul>
+                {{#each variables}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+            <div class="col-2">
+              <div class="mb-2">
+                <b>Functions:</b>
+              </div>
+              <ul>
+                {{#each functions}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+            <div class="col-2">
+              <div class="mb-2">
+                <b>Conditionals:</b>
+              </div>
+              <ul>
+                {{#each conditionals}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+            <div class="col-2">
+              <div class="mb-2">
+                <b>Loops:</b>
+              </div>
+              <ul>
+                {{#each loops}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+            <div class="col-2">
+              <div class="mb-2">
+                <b>Classes:</b>
+              </div>
+              <ul>
+                {{#each classes}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
+            {{/with}}
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section>
+        <div class="mb-2">
+          <span class="badge rounded-pill text-bg-warning">Features:</span>
+        </div>
+        <div>
           <ul>
-            {{#each functions}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-          <br>
-          <b>Conditionals:</b>
-          <ul>
-            {{#each conditionals}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-          <br>
-          <b>Loops:</b>
-          <ul>
-            {{#each loops}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-          <br>
-          <b>Classes:</b>
-          <ul>
-            {{#each classes}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-        {{/with}}
-      </div>
-    </section>
-    <br>
-    <hr>
-    <section>
-      <div>
-        <span class="badge rounded-pill text-bg-warning">Features:</span>
-      </div>
-      <br>
-      <div>
-        <ul>
             {{#each features}}
-              <li>{{this}}</li>
+            <li>{{this}}</li>
             {{/each}}
           </ul>
-      </div>
-    </section>
-    <br>
-    <hr>
-    <section>
-      <div>
-        <span class="badge text-bg-light">Libraries:</span>
-      </div>
-      <br>
-      <div>
-        <ul>
-            {{#each libraries}}
-              <li>{{this}}</li>
-            {{/each}}
+        </div>
+      </section>
+      <hr>
+      <section>
+        <div class="mb-2">
+          <span class="badge text-bg-light">Libraries:</span>
+        </div>
+        <div>
+          <ul>
+            <div class="row">
+              {{#each libraries}}
+              <div class="col-4">
+                <li>{{this}}</li>
+              </div>
+              {{/each}}
+            </div>
           </ul>
-      </div>
-    </section>
-    <br>
-    <hr>
-    <section>
-      <div>
-        <span class="badge text-bg-secondary">Tools:</span>
-      </div>
-      <br>
-      <div>
-        <ul>
-            {{#each tools}}
-              <li>{{this}}</li>
-            {{/each}}
+        </div>
+      </section>
+      <hr>
+      <section>
+        <div class="mb-2">
+          <span class="badge text-bg-secondary">Tools:</span>
+        </div>
+        <div>
+          <ul>
+            <div class="row">
+              {{#each tools}}
+              <div class="col-4">
+                <li>{{this}}</li>
+              </div>
+              {{/each}}
+            </div>
           </ul>
-      </div>
-    </section>
-    <br>
-    <hr>
-    <section>
-      <div>
-        <span class="badge text-bg-secondary">Community:</span>
-      </div>
-      <br>
-      <div>
-        <ul>
+        </div>
+      </section>
+
+      <hr>
+      <section>
+        <div class="mb-2">
+          <span class="badge text-bg-secondary">Community:</span>
+        </div>
+
+        <div>
+          <ul>
+            <div class="row">
             {{#each community}}
-              <li>{{name}} / {{type}}</li>
+            <div class="col-5">
+            <li>{{name}} / {{type}}</li>
+            </div>
             {{/each}}
+            </div>
           </ul>
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   </main>
 </div>
 

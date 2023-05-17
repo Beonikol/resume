@@ -4,8 +4,8 @@
 }}
 
 <div>
-  <header>
-    <section>
+  <header class="mb-3">
+    <section class='text-center'>
       <div>
         <h1>{{make}} {{model}}</h1>
       </div>
@@ -16,68 +16,77 @@
       </div>
     </section>
   </header>
-  <br>
-  <hr>
   <main>
     <div>
       {{#with features}}
-        <section>
-          <div>
-            <button type="button" class="btn btn-dark">Interior</button>
+      <section>
+        <div class="card mb-2">
+          <div class="card-body">
+            <div>
+              <button type="button" class="btn btn-dark">Interior</button>
+            </div>
+            <br>
+            <div>
+              <ul>
+                <li>Material: {{interior.seats.material}}</li>
+                <li>Color: {{interior.seats.color}}</li>
+                <li>Heated: {{interior.seats.heated}}</li>
+                <li>Ventilated: {{interior.seats.ventilated}}</li>
+              </ul>
+            </div>
           </div>
-          <br>
-          <div>
-            <ul>
-              <li>Material: {{interior.seats.material}}</li>
-              <li>Color: {{interior.seats.color}}</li>
-              <li>Heated: {{interior.seats.heated}}</li>
-              <li>Ventilated: {{interior.seats.ventilated}}</li>
-            </ul>
-          </div>
-        </section>
-        <br>
-        <hr>
-        <section>
-          <div>
-            <button type="button" class="btn btn-dark">Dashboard</button>
-          </div>
-          <br>
-          <div>
-            <ul>
-              <li>Material: {{interior.dashboard.material}}</li>
-              <li>Color: {{interior.dashboard.color}}</li>
-              <li>Display: {{interior.dashboard.display.type}} / {{interior.dashboard.display.size}} / {{interior.dashboard.display.resolution}} / {{interior.dashboard.display.touchscreen}}</li>
-            </ul>
-          </div>
-        </section>
-        <br>
-        <hr>
-        <section>
-          <div>
-              <button type="button" class="btn btn-dark">Audio</button>
-          </div>
-          <br>
-          <div>
-            <ul>
-              <li>System: {{interior.audio.system}}</li>
-              <li>Speakers: {{interior.audio.speakers}}</li>
-              <li>Subwoofer: {{interior.audio.subwoofer}}</li>
-              <li>Bluetooth: {{interior.audio.bluetooth}}</li>
-              <li>USB: {{interior.audio.USB}}</li>
-            </ul>
-          </div>
-        </section>
-        <br>
-        <hr>
-        <div>
-              <h4>Exterior <span class="badge bg-secondary">New</span></h4>
         </div>
-        <br>
-         <section>
+      </section>
+      <section>
+        <div class="card mb-2">
+          <div class="card-body">
+            <div>
+              <button type="button" class="btn btn-dark">Dashboard</button>
+            </div>
+            <br>
+            <div>
+              <ul>
+                <li>Material: {{interior.dashboard.material}}</li>
+                <li>Color: {{interior.dashboard.color}}</li>
+                <li>Display: {{interior.dashboard.display.type}} / {{interior.dashboard.display.size}} /
+                  {{interior.dashboard.display.resolution}} / {{interior.dashboard.display.touchscreen}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="card mb-2">
+          <div class="card-body">
+            <div>
+              <button type="button" class="btn btn-dark">Audio</button>
+            </div>
+            <br>
+            <div>
+              <ul>
+                <li>System: {{interior.audio.system}}</li>
+                <li>Speakers: {{interior.audio.speakers}}</li>
+                <li>Subwoofer: {{interior.audio.subwoofer}}</li>
+                <li>Bluetooth: {{interior.audio.bluetooth}}</li>
+                <li>USB: {{interior.audio.USB}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="mt-4 mb-4 text-end">
+        <h4>Exterior <span class="badge bg-secondary">New</span></h4>
+      </div>
+
+      <section>
+        <div class="card mb-2">
+          <div class="card-body">
             <div>
               <button type="button" class="btn btn-dark">Wheels</button>
             </div>
-              <br>
+            <br>
             <div>
               <ul>
                 <li>Size: {{exterior.wheels.size}}</li>
@@ -85,14 +94,17 @@
                 <li>Color: {{exterior.wheels.color}}</li>
               </ul>
             </div>
-        </section>
-        <br>
-        <hr>
-        <section>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="card mb-2">
+          <div class="card-body">
             <div>
               <button type="button" class="btn btn-dark">Headlights</button>
             </div>
-              <br>
+            <br>
             <div>
               <ul>
                 <li>Type: {{exterior.headlights.type}}</li>
@@ -100,14 +112,17 @@
                 <li>Automatic: {{exterior.headlights.automatic}}</li>
               </ul>
             </div>
-        </section>
-        <br>
-        <hr>
-        <section>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="card mb-2">
+          <div class="card-body">
             <div>
               <button type="button" class="btn btn-dark">Sunroof</button>
             </div>
-              <br>
+            <br>
             <div>
               <ul>
                 <li>Type: {{exterior.sunroof.type}}</li>
@@ -115,50 +130,62 @@
                 <li>Automatic: {{exterior.sunroof.automatic}}</li>
               </ul>
             </div>
-        </section>
-        <br>
-        <hr>
-        <section>
-          <div>
-              <h4>Safety <span class="badge bg-secondary">New</span></h4>
           </div>
-          <br>
-            <div>
-              <button type="button" class="btn btn-dark">Airbags</button>
-            </div>
-              <br>
-            <div>
-              <ul>
-                <li>Front: {{safety.airbags.front}}</li>
-                <li>Side: {{safety.airbags.side}}</li>
-                <li>Knee: {{safety.airbags.knee}}</li>
-                <li>Rear: {{safety.airbags.rear}}</li>
-              </ul>
-            </div>
-            <br>
-            <hr>
-            <div>
-              <button type="button" class="btn btn-dark">Assistance</button>
-            </div>
-              <br>
-            <div>
-              <ul>
-                <li>Blind spot monitoring: {{safety.assistance.blind_spot_monitoring}}</li>
-                <li>Rear cross traffic alert: {{safety.assistance.rear_cross_traffic_alert}}</li>
-                <li>Lane departure warning: {{safety.assistance.lane_departure_warning}}</li>
-                <li>Adaptive cruise control: {{safety.assistance.adaptive_cruise_control}}</li>
-                <li>Collision warning: {{safety.assistance.collision_warning}}</li>
-              </ul>
-            </div>
-        </section>        
-      {{/with}}
-      <br>
-      <hr>
+        </div>
+      </section>
+
+
+      <div class="mt-4 mb-4 text-end">
+        <h4>Safety <span class="badge bg-secondary">New</span></h4>
+      </div>
       <section>
+        <div class="card mb-2">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-5">
+                <div class="mb-3">
+                  <button type="button" class="btn btn-dark">Airbags</button>
+                </div>
+
+
+                <div>
+                  <ul>
+                    <li>Front: {{safety.airbags.front}}</li>
+                    <li>Side: {{safety.airbags.side}}</li>
+                    <li>Knee: {{safety.airbags.knee}}</li>
+                    <li>Rear: {{safety.airbags.rear}}</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-5">
+                <div class="mb-3">
+                  <button type="button" class="btn btn-dark">Assistance</button>
+                </div>
+
+                <div>
+                  <ul>
+                    <li>Blind spot monitoring: {{safety.assistance.blind_spot_monitoring}}</li>
+                    <li>Rear cross traffic alert: {{safety.assistance.rear_cross_traffic_alert}}</li>
+                    <li>Lane departure warning: {{safety.assistance.lane_departure_warning}}</li>
+                    <li>Adaptive cruise control: {{safety.assistance.adaptive_cruise_control}}</li>
+                    <li>Collision warning: {{safety.assistance.collision_warning}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {{/with}}
+
+      <section>
+        <div class="card mb-2">
+          <div class="card-body">
             <div>
               <span class="badge text-bg-primary">Engine</span>
             </div>
-              <br>
+            <br>
             <div>
               <ul>
                 <li>Type: {{engine.type}}</li>
@@ -173,7 +200,7 @@
             <div>
               <span class="badge text-bg-primary">Fuel economy</span>
             </div>
-              <br>
+            <br>
             <div>
               <ul>
                 <li>City: {{fuel_economy.city}}</li>
@@ -186,7 +213,7 @@
             <div>
               <span class="badge text-bg-primary">Price</span>
             </div>
-              <br>
+            <br>
             <div>
               <ul>
                 <li>Base: {{price.base}}</li>
@@ -196,10 +223,16 @@
                 <li>Premium paint: {{price.options.premium_paint}}</li>
               </ul>
             </div>
-            <div>
-              Total: <button type="button" class="btn btn-success">{{price.total}}</button>
+            <div class="card mb-2">
+              <div class="card-body">
+                <div>
+                  Total: <button type="button" class="btn btn-success">{{price.total}}</button>
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 </div>

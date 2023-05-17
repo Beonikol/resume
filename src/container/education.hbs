@@ -5,33 +5,42 @@
 
 <div>
     {{#with main}}
-        <main>
-            <section>
-                {{> title data="My educationss" big=true}}
-                <ul class="ps-5">
+    <main>
+        <section class="my-4">
+            {{> title data="My educationss" big=true}}
+            <ul class="ps-5">
+                <div class="row">
                     {{#each educations}}
+                    <div class="col-4">
                         <li>
                             {{name}}
                             {{#unless isEnd}}
-                                (ще в процессі)
+                            (ще в процессі)
                             {{/unless}}
                         </li>
+                    </div>
                     {{/each}}
-                </ul>
-            </section>
-            <section>
-                {{> title data="My certificates" big=false}}
-                <ul class="ps-5">
+                </div>
+            </ul>
+        </section>
+        <hr>
+        <section class="mt-4">
+            {{> title data="My certificates" big=false}}
+            <ul class="ps-5">
+                <div class="row">
                     {{#each certificates}}
+                    <div class="col-4">
                         <li>
                             {{name}}
                             {{#if id includeZero=true}} ({{id}}) {{/if}}
                         </li>
+                    </div>
                     {{/each}}
-                </ul>
-            </section>
-        </main>
-  {{/with}}
+                </div>
+            </ul>
+        </section>
+    </main>
+    {{/with}}
 </div>
 
 {{!--
