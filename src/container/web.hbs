@@ -6,10 +6,12 @@
 <div>
   <main>
     {{#with web}}
-    <section>
-        <div>
-          {{#with languages.[0]}}
-            <div>
+    <section class="mb-3">
+      <div class="card">
+        <div class="card-body">
+          <div>
+            {{#with languages.[0]}}
+            <div class="text-center">
               <h2>{{name}}</h2>
             </div>
             <br>
@@ -26,148 +28,156 @@
             </div>
             <br>
             <div>
-                {{#with elements.[0]}}
+              {{#with elements.[0]}}
+              <div>
+                {{name}} / {{description}}
+              </div>
+              <ul>
                 <div>
-                  {{name}} / {{description}}
+                  {{#each attributes}}
+                  <li>{{name}}</li>
+                  <li>{{description}}</li>
+                  {{/each}}
                 </div>
-                <ul>
-                  <div>
-                    {{#each attributes}}
-                      <li>{{name}}</li>
-                      <li>{{description}}</li>
-                    {{/each}}
-                  </div>
-                </ul>
-                {{/with}}
+              </ul>
+              {{/with}}
             </div>
             <br>
             <hr>
             <div>
               {{#with elements.[1]}}
               <div>
-                  {{name}} / {{description}}
+                {{name}} / {{description}}
               </div>
               <ul>
                 {{#each attributes}}
-                  <li>{{name}}</li>
-                  <li>{{description}}</li>
+                <li>{{name}}</li>
+                <li>{{description}}</li>
                 {{/each}}
               </ul>
               {{/with}}
             </div>
+            {{/with}}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-3">
+      <div class="card">
+        <div class="card-body">
+          {{#with languages.[1]}}
+          <div class="text-center">
+            <h2>{{name}}</h2>
+          </div>
+          <br>
+          <div>
+            Version: {{version}}
+          </div>
+          <br>
+          <div>
+            Description: <p>{{description}}</p>
+          </div>
+          <br>
+          <div>
+            <div>
+              <em>Properties:</em>
+            </div>
+            <br>
+            {{#with properties.[0]}}
+            <div>
+              {{name}} / {{description}}
+            </div>
+            <br>
+            <div>
+              <ul>
+                {{#each values}}
+                <li>{{value}}</li>
+                <li>{{description}}</li>
+                {{/each}}
+              </ul>
+            </div>
+            {{/with}}
+            <br>
+            <hr>
+            {{#with properties.[1]}}
+            <div>
+              {{name}} / {{description}}
+            </div>
+            <br>
+            <div>
+              <ul>
+                {{#each values}}
+                <li>{{value}}</li>
+                <li>{{description}}</li>
+                {{/each}}
+              </ul>
+            </div>
+            {{/with}}
+          </div>
           {{/with}}
         </div>
-      </section>
-      <br>
-      <hr>
-      <section>
-        {{#with languages.[1]}}
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <div class="card-body">
+          {{#with languages.[2]}}
+          <div class="text-center">
+            <h2>{{name}}</h2>
+          </div>
+          <br>
           <div>
-              <h2>{{name}}</h2>
-            </div>
-            <br>
-            <div>
-              Version: {{version}}
-            </div>
-            <br>
-            <div>
-              Description: <p>{{description}}</p>
-            </div>
-            <br>
-            <div>
-              <div>
-                <em>Properties:</em>
-              </div>
-              <br>
-                {{#with properties.[0]}}
-                  <div>
-                    {{name}} / {{description}}
-                  </div>
-                  <br>
-                  <div>
-                    <ul>
-                      {{#each values}}
-                        <li>{{value}}</li>
-                        <li>{{description}}</li>
-                      {{/each}}
-                    </ul>
-                  </div>
-                {{/with}}
-                <br>
-                <hr>
-                {{#with properties.[1]}}
-                  <div>
-                    {{name}} / {{description}}
-                  </div>
-                  <br>
-                  <div>
-                    <ul>
-                      {{#each values}}
-                        <li>{{value}}</li>
-                        <li>{{description}}</li>
-                      {{/each}}
-                    </ul>
-                  </div>
-                {{/with}}
-            </div>
-        {{/with}}
-      </section>
-      <br>
-      <hr>
-      <section>
-        {{#with languages.[2]}}
+            Version: {{version}}
+          </div>
+          <br>
           <div>
-              <h2>{{name}}</h2>
+            Description: <p>{{description}}</p>
+          </div>
+          <br>
+          <div>
+            <div>
+              <em>Functions:</em>
+            </div>
+            <br>
+            {{#with functions.[0]}}
+            <div>
+              {{name}} / {{description}}
             </div>
             <br>
             <div>
-              Version: {{version}}
+              <ul>
+                {{#each parameters}}
+                <li>{{name}}</li>
+                <li>{{type}}</li>
+                <li>{{description}}</li>
+                {{/each}}
+              </ul>
+            </div>
+            {{/with}}
+            <br>
+            <hr>
+            {{#with functions.[1]}}
+            <div>
+              {{name}} / {{description}}
             </div>
             <br>
             <div>
-              Description: <p>{{description}}</p>
+              <ul>
+                {{#each parameters}}
+                <li>{{name}}</li>
+                <li>{{type}}</li>
+                <li>{{description}}</li>
+                {{/each}}
+              </ul>
             </div>
-            <br>
-            <div>
-              <div>
-                <em>Functions:</em>
-              </div>
-              <br>
-                {{#with functions.[0]}}
-                  <div>
-                    {{name}} / {{description}}
-                  </div>
-                  <br>
-                  <div>
-                    <ul>
-                      {{#each parameters}}
-                        <li>{{name}}</li>
-                        <li>{{type}}</li>
-                        <li>{{description}}</li>
-                      {{/each}}
-                    </ul>
-                  </div>
-                {{/with}}
-                <br>
-                <hr>
-                {{#with functions.[1]}}
-                  <div>
-                    {{name}} / {{description}}
-                  </div>
-                  <br>
-                  <div>
-                    <ul>
-                      {{#each parameters}}
-                        <li>{{name}}</li>
-                        <li>{{type}}</li>
-                        <li>{{description}}</li>
-                      {{/each}}
-                    </ul>
-                  </div>
-                {{/with}}
-            </div>
-        {{/with}}
-      </section>
+            {{/with}}
+          </div>
+          {{/with}}
+        </div>
+      </div>
+    </section>
     {{/with}}
   </main>
 </div>

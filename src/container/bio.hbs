@@ -5,163 +5,176 @@
 
 <div>
   <header>
-    <section>
-      <div>
-        <h1>{{name}}</h1>
-      </div>
-      <br />
-      <div>
-        Birthdate:<em>{{birthdate}}</em>
-      </div>
-      <br />
-      <div>
-        Birthplace:
-        {{birthplace}}
-      </div>
-      <br />
-      <div>
-        Deathdate:
-        {{deathdate}}
-      </div>
-      <br />
-      <div>
-        Deathplace:
-        {{deathplace}}
-      </div>
-      <br />
-      <div>
-        Nationality:
-        {{nationality}}
-      </div>
-      <br />
-      <div>
-        Occupation:
-        {{occupation}}
-      </div>
-      <br />
-      <div>
-        Known:
-        <ul>
-          {{#each known_for}}
-            <li>{{this}}</li>
-          {{/each}}
-        </ul>
+    <section class="mb-3">
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <h1>{{name}}</h1>
+          </div>
+          <br />
+          <div>
+            Birthdate: <em>{{birthdate}}</em>
+          </div>
+          <br />
+          <div>
+            Birthplace:
+            {{birthplace}}
+          </div>
+          <br />
+          <div>
+            Deathdate:
+            {{deathdate}}
+          </div>
+          <br />
+          <div>
+            Deathplace:
+            {{deathplace}}
+          </div>
+          <br />
+          <div>
+            Nationality:
+            {{nationality}}
+          </div>
+          <br />
+          <div>
+            Occupation:
+            {{occupation}}
+          </div>
+          <br />
+          <div>
+            Known:
+            <ul>
+              {{#each known_for}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   </header>
   <main>
-    <br />
-    <hr />
-    <section>
-      <div>
-        {{#each education}}
-          {{> title data="Education" big=true}}
-          <br>
+    <div class="card">
+      <div class="card-body">
+        <section>
           <div>
-            Degree: {{degree}}
+            {{#each education}}
+            {{> title data="Education" big=true}}
+            <div class="my-2">
+              Degree: {{degree}}
+            </div>
+            <div class="my-2">
+              Field: {{field}}
+            </div>
+            <div class="my-2">
+              Institution: {{institution}}
+            </div>
+            <div class="my-2">
+              Year: {{year}}
+            </div>
+            {{/each}}
           </div>
+        </section>
+        <hr />
+        <section>
           <div>
-            Field: {{field}}
+            <div class="my-2">
+              <b>Notable publications:</b>
+            </div>
+            <ul>
+              {{#each notable_publications}}
+              <li>{{title}} / {{year}} / {{publisher}}</li>
+              {{/each}}
+            </ul>
           </div>
+        </section>
+        <hr />
+        <section>
           <div>
-            Institution: {{institution}}
+            <div class="my-2">
+              <b>Partners:</b>
+            </div>
+            <ul>
+              {{#each partners}}
+              <li>{{name}} / {{relationship}} / {{years}}</li>
+              {{/each}}
+            </ul>
           </div>
+        </section>
+        <hr />
+        <section>
           <div>
-            Year: {{year}}
-          </div>
-        {{/each}}
-      </div>
-    </section>
-    <br />
-    <hr />
-    <section>
-      <div>
-        <b>Notable publications:</b>
-        <ul>
-          {{#each notable_publications}}
-          <li>{{title}} / {{year}} / {{publisher}}</li>
-          {{/each}}
-        </ul>
-      </div>
-    </section>
-    <br />
-    <hr />
-    <section>
-      <div>
-        <b>Partners:</b>
-        <ul>
-          {{#each partners}}
-          <li>{{name}} / {{relationship}} / {{years}}</li>
-          {{/each}}
-        </ul>
-      </div>
-    </section>
-    <br />
-    <hr />
-    <section>
-      <div>
-        <b>Awards:</b>
-        <ul>
-            {{#each awards}}
+            <div class="my-2">
+              <b>Awards:</b>
+            </div>
+            <ul>
+              {{#each awards}}
               <li>{{title}} / {{year}} / {{description}}</li>
-            {{/each}}
-        </ul>
-      </div>
-    </section>
-    <br />
-    <hr />
-    <section>
-      <div>
-        <b>Influences:</b>
-        <ul>
-            {{#each influences}}
+              {{/each}}
+            </ul>
+          </div>
+        </section>
+        <hr />
+        <section>
+          <div>
+            <div class="my-2">
+              <b>Influences:</b>
+            </div>
+            <ul>
+              {{#each influences}}
               <li>{{this}}</li>
-            {{/each}}
-        </ul>
-      </div>
-    </section>
-    <br />
-    <hr />
-    <section>
-      <div>
-        <b>Influenced:</b>
-        <ul>
-            {{#each influenced}}
+              {{/each}}
+            </ul>
+          </div>
+        </section>
+        <hr />
+        <section>
+          <div>
+            <div class="my-2">
+              <b>Influenced:</b>
+            </div>
+            <ul>
+              {{#each influenced}}
               <li>{{this}}</li>
-            {{/each}}
-        </ul>
-      </div>
-    </section>
-    <br />
-    <hr />
-    <section>
-      <div>
-        <b>Quotes:</b>
-        <p>{{quotes}}</p>
-      </div>
-    </section>
-    <br />
-    <hr />
-    <section>
-      <div>
-        <b>Major discoveries:</b>
-        <ul>
-            {{#each major_discoveries}}
+              {{/each}}
+            </ul>
+          </div>
+        </section>
+        <hr />
+        <section>
+          <div>
+            <div class="my-2">
+              <b>Quotes:</b>
+            </div>
+            <p>{{quotes}}</p>
+          </div>
+        </section>
+        <hr />
+        <section>
+          <div>
+            <div class="my-2">
+              <b>Major discoveries:</b>
+            </div>
+            <ul>
+              {{#each major_discoveries}}
               <li>{{title}} / {{year}} / {{description}}</li>
-            {{/each}}
-        </ul>
+              {{/each}}
+            </ul>
+          </div>
+        </section>
+        <hr />
+        <section>
+          <div>
+            <div class="my-2">
+              <b>Contributions:</b>
+            </div>
+            <ul>
+              {{contributions.title}} / {{contributions.description}} / {{contributions.year}} / {{contributions.field}}
+            </ul>
+          </div>
+        </section>
       </div>
-    </section>
-    <br />
-    <hr />
-    <section>
-      <div>
-        <b>Contributions:</b>
-        <ul>
-          {{contributions.title}} / {{contributions.description}} / {{contributions.year}} / {{contributions.field}}
-        </ul>
-      </div>
-    </section>
+    </div>
   </main>
 </div>
 

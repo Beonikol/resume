@@ -5,29 +5,37 @@
 
 <div>
     {{#with main}}
-        <main>
-            <section class="mb-4">
-                <div>
-                    {{> title data=sammary.title big=true}}
+    <main>
+        <section class="mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        {{> title data=sammary.title big=true}}
+                    </div>
+                    <div>
+                        <p>
+                            {{sammary.text}}
+                        </p>
+                    </div>
                 </div>
-                <div>
-                    <p>
-                        {{sammary.text}}
-                    </p>
-                </div>
-            </section>
+            </div>
+        </section>
 
-            {{#with experience}}
-                <section>
+        {{#with experience}}
+        <section>
+            <div class="card">
+                <div class="card-body">
                     {{> title data=title big=false}}
                     <div>
                         <p>
                             {{text}}
                         </p>
                     </div>
-                </section>
-            {{/with}}
-        </main>
+                </div>
+            </div>
+        </section>
+        {{/with}}
+    </main>
     {{/with}}
 </div>
 

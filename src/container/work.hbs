@@ -5,107 +5,95 @@
 
 <div>
     {{#with main}}
-        <main>
-            <section>
-                <div>
-                    {{> title data="Work history" big=true}}
-                </div>
-                <div>
-                    <p>
+    <main>
+        <section>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        {{> title data="Work history" big=true}}
+                    </div>
+                    <div>
+                        <p>
                         <ul>
                             {{#each works}}
-                                <li>
-                                    <div>{{position}}</div>
+                            <li>
+                                <div>{{position}}</div>
 
-                                    <br>
+                                <div>
+                                    {{duration.from}}-
+                                    {{#if duration.to}}
+                                    {{duration.to}}
+                                    {{else}}
+                                    (досі працюємо)
+                                    {{/if}}
+                                </div>
 
-                                    <div>
-                                        {{duration.from}}-
-                                        {{#if duration.to}} 
-                                            {{duration.to}} 
-                                        {{else}} 
-                                            (досі працюємо) 
+                                <div class="my-3">
+                                    {{#if company.url}}
+                                    {{> link text=company.name href=company.url blank=true noLine=true}}
+                                    {{else}}
+                                    <b>{{company.name}}</b>
+                                    {{/if}}
+                                </div>
+
+
+
+                                <div class="my-3">
+                                    <strong>Prodjects ({{prodjectAmount}})</strong>
+                                </div>
+
+
+
+                                <ul>
+                                    {{#each projects}}
+                                    <li class="my-3">
+                                        {{#if url}}
+                                        <div>{{> link text=name href=url blank=true noLine=true}}</div>
+                                        {{else}}
+                                        <b>{{name}}</b>
                                         {{/if}}
-                                    </div>
 
-                                    <br>
+                                        <div class="my-3">
+                                            <p>
+                                                {{about}}
+                                            </p>
+                                        </div>
+                                        <div class="my-3">
+                                            <em>Project stacks ({{stackAmoGnt}})</em>
+                                        </div>
+                                        <div class="my-3">
+                                            <ul>
+                                                {{#each stacks}}
+                                                <li>{{name}}</li>
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                        <div class="my-3">
+                                            <em>Project awards ({{awardAmoGnt}})</em>
+                                        </div>
 
-                                    <div>
-                                        {{#if company.url}}
-                                            {{> link text=company.name href=company.url blank=true noLine=true}}
-                                            {{else}}
-                                            <b>{{company.name}}</b>
-                                        {{/if}}
-                                    </div>
 
-                                    <br>
-                                    <br>
 
-                                    <div>
-                                        <strong>Prodjects ({{prodjectAmount}})</strong>
-                                    </div>
-
-                                    <br>
-
-                                    <ul>
-                                        {{#each projects}}
-                                            <li>
-                                                {{#if url}}
-                                                    <div>{{> link text=name href=url blank=true noLine=true}}</div>
-                                                    {{else}}
-                                                <b>{{name}}</b>
-                                                {{/if}}
-                                                
-                                                <br>
-
-                                                <div>
-                                                    <p>
-                                                        {{about}}
-                                                    </p>
-                                                </div>
-
-                                                <br>
-
-                                                <div>
-                                                    <em>Project stacks ({{stackAmoGnt}})</em>
-                                                </div>
-
-                                                <br>
-
-                                                <div>
-                                                    <ul>
-                                                        {{#each stacks}}
-                                                            <li>{{name}}</li>
-                                                        {{/each}}
-                                                    </ul>
-                                                </div>
-
-                                                <br>
-
-                                                <div>
-                                                    <em>Project awards ({{awardAmoGnt}})</em>
-                                                </div>
-
-                                                <br>
-
-                                                <div>
-                                                    <ul>
-                                                        {{#each awards}}
-                                                            <li>{{name}}</li>
-                                                        {{/each}}
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        {{/each}}
-                                    </ul>
-                                </li>
-                                <br>
+                                        <div class="my-3">
+                                            <ul>
+                                                {{#each awards}}
+                                                <li>{{name}}</li>
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                            <br>
                             {{/each}}
                         </ul>
-                    </p>
+                        </p>
+                    </div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
+    </main>
     {{/with}}
 </div>
 
